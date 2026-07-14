@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Leaderboard | Kid Tutor</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+
+    <a
+        href="index.html"
+        class="logo"
+    >
+
+        <div class="logo-icon">
+
+            🎓
+
+        </div>
+
+
+        <div>
+
+            <h2>
+                Kid Tutor
+            </h2>
+
+            <span>
+                Learn • Play • Grow
+            </span>
+
+        </div>
+
+    </a>
+
+
+    <nav>
+
+        <a href="index.html">
+
+            Home
+
+        </a>
+
+
+        <a href="index.html#subjects">
+
+            Subjects
+
+        </a>
+
+
+        <a
+            href="leaderboard.html"
+            class="active"
+        >
+
+            Leaderboard
+
+        </a>
+
+
+        <a href="contact.html">
+
+            Contact Us
+
+        </a>
+
+
+        <a href="login.html">
+
+            Login
+
+        </a>
+
+    </nav>
+
+
+</header>
+
+
+
+<!-- LEADERBOARD HERO -->
+
+<section class="leaderboard-hero">
+
+
+    <div class="leaderboard-heading">
+
+
+        <div class="trophy-icon">
+
+            🏆
+
+        </div>
+
+
+        <p>
+
+            Kid Tutor Champions
+
+        </p>
+
+
+        <h1>
+
+            Learning Leaderboard
+
+        </h1>
+
+
+        <span>
+
+            Complete quizzes, improve your
+            score and become a learning champion!
+
+        </span>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- LEADERBOARD CONTENT -->
+
+<main class="leaderboard-page">
+
+
+    <!-- TOP PLAYER CARDS -->
+
+    <section class="top-player-container">
+
+
+        <!-- SECOND -->
+
+        <article class="top-player-card second-place">
+
+
+            <div class="rank-medal">
+
+                🥈
+
+            </div>
+
+
+            <div class="player-avatar">
+
+                🧒
+
+            </div>
+
+
+            <h3 id="secondName">
+
+                No Player
+
+            </h3>
+
+
+            <p>
+
+                Second Place
+
+            </p>
+
+
+            <strong id="secondScore">
+
+                --%
+
+            </strong>
+
+
+        </article>
+
+
+
+        <!-- FIRST -->
+
+        <article class="top-player-card first-place">
+
+
+            <div class="crown">
+
+                👑
+
+            </div>
+
+
+            <div class="rank-medal">
+
+                🥇
+
+            </div>
+
+
+            <div class="player-avatar">
+
+                🌟
+
+            </div>
+
+
+            <h3 id="firstName">
+
+                No Player
+
+            </h3>
+
+
+            <p>
+
+                Learning Champion
+
+            </p>
+
+
+            <strong id="firstScore">
+
+                --%
+
+            </strong>
+
+
+        </article>
+
+
+
+        <!-- THIRD -->
+
+        <article class="top-player-card third-place">
+
+
+            <div class="rank-medal">
+
+                🥉
+
+            </div>
+
+
+            <div class="player-avatar">
+
+                👦
+
+            </div>
+
+
+            <h3 id="thirdName">
+
+                No Player
+
+            </h3>
+
+
+            <p>
+
+                Third Place
+
+            </p>
+
+
+            <strong id="thirdScore">
+
+                --%
+
+            </strong>
+
+
+        </article>
+
+
+    </section>
+
+
+
+    <!-- PLAYER STATISTICS -->
+
+    <section class="statistics-container">
+
+
+        <article class="stat-card">
+
+
+            <div class="stat-icon">
+
+                🎯
+
+            </div>
+
+
+            <div>
+
+                <p>
+
+                    Best Score
+
+                </p>
+
+
+                <h3 id="bestScore">
+
+                    0%
+
+                </h3>
+
+            </div>
+
+
+        </article>
+
+
+
+        <article class="stat-card">
+
+
+            <div class="stat-icon">
+
+                📚
+
+            </div>
+
+
+            <div>
+
+                <p>
+
+                    Quizzes Completed
+
+                </p>
+
+
+                <h3 id="totalQuizzes">
+
+                    0
+
+                </h3>
+
+            </div>
+
+
+        </article>
+
+
+
+        <article class="stat-card">
+
+
+            <div class="stat-icon">
+
+                📈
+
+            </div>
+
+
+            <div>
+
+                <p>
+
+                    Average Score
+
+                </p>
+
+
+                <h3 id="averageScore">
+
+                    0%
+
+                </h3>
+
+            </div>
+
+
+        </article>
+
+
+    </section>
+
+
+
+    <!-- QUIZ HISTORY -->
+
+    <section class="history-card">
+
+
+        <div class="history-heading">
+
+
+            <div>
+
+
+                <p class="quiz-label">
+
+                    Your Learning Progress
+
+                </p>
+
+
+                <h2>
+
+                    Quiz History
+
+                </h2>
+
+
+            </div>
+
+
+            <button
+
+                id="clearHistory"
+
+                class="clear-history-button"
+
+            >
+
+                Clear History
+
+            </button>
+
+
+        </div>
+
+
+
+        <div class="table-container">
+
+
+            <table>
+
+
+                <thead>
+
+
+                    <tr>
+
+
+                        <th>
+
+                            Rank
+
+                        </th>
+
+
+                        <th>
+
+                            Student
+
+                        </th>
+
+
+                        <th>
+
+                            Subject
+
+                        </th>
+
+
+                        <th>
+
+                            Score
+
+                        </th>
+
+
+                        <th>
+
+                            Percentage
+
+                        </th>
+
+
+                        <th>
+
+                            Date
+
+                        </th>
+
+
+                    </tr>
+
+
+                </thead>
+
+
+                <tbody id="leaderboardBody">
+
+
+                    <!-- JavaScript adds results -->
+
+
+                </tbody>
+
+
+            </table>
+
+
+        </div>
+
+
+
+        <!-- EMPTY MESSAGE -->
+
+        <div
+
+            id="emptyLeaderboard"
+
+            class="empty-leaderboard"
+
+        >
+
+
+            <div>
+
+                📚
+
+            </div>
+
+
+            <h3>
+
+                No Quiz Scores Yet
+
+            </h3>
+
+
+            <p>
+
+                Complete your first quiz and
+                your score will appear here.
+
+            </p>
+
+
+            <a
+
+                href="index.html#subjects"
+
+                class="primary-button"
+
+            >
+
+                Start a Quiz 🚀
+
+            </a>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+
+    <h2>
+
+        Kid Tutor
+
+    </h2>
+
+
+    <p>
+
+        Making learning simple,
+        exciting and enjoyable.
+
+    </p>
+
+
+    <div class="footer-links">
+
+
+        <a href="index.html">
+
+            Home
+
+        </a>
+
+
+        <a href="leaderboard.html">
+
+            Leaderboard
+
+        </a>
+
+
+        <a href="contact.html">
+
+            Contact
+
+        </a>
+
+
+    </div>
+
+
+    <p class="copyright">
+
+        © 2026 Kid Tutor.
+        All rights reserved.
+
+    </p>
+
+
+</footer>
+
+
+
+<script src="js/leaderboard.js"></script>
+
+<script src="js/leaderboard.js"></script>
+
+<script src="js/navbar.js"></script>
+
+</body>
+
+
+</body>
+
+</html>

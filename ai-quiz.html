@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Create AI Quiz | Kid Tutor
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ========================= -->
+<!-- NAVBAR -->
+<!-- ========================= -->
+
+
+<header class="navbar">
+
+
+    <a
+        href="index.html"
+        class="logo"
+    >
+
+
+        <div class="logo-icon">
+
+            🎓
+
+        </div>
+
+
+        <div>
+
+            <h2>
+
+                Kid Tutor
+
+            </h2>
+
+
+            <span>
+
+                Learn • Play • Grow
+
+            </span>
+
+        </div>
+
+
+    </a>
+
+
+    <nav>
+
+
+        <a href="index.html">
+
+            Home
+
+        </a>
+
+
+        <a href="index.html#subjects">
+
+            Subjects
+
+        </a>
+
+
+        <a href="leaderboard.html">
+
+            Leaderboard
+
+        </a>
+
+
+        <a href="contact.html">
+
+            Contact Us
+
+        </a>
+
+
+        <a href="login.html">
+
+            Login
+
+        </a>
+
+
+    </nav>
+
+
+</header>
+
+
+
+<!-- ========================= -->
+<!-- AI QUIZ SETUP -->
+<!-- ========================= -->
+
+
+<main class="ai-setup-page">
+
+
+    <!-- DECORATIONS -->
+
+
+    <div class="ai-decoration decoration-one">
+
+        ✨
+
+    </div>
+
+
+    <div class="ai-decoration decoration-two">
+
+        ⭐
+
+    </div>
+
+
+    <div class="ai-decoration decoration-three">
+
+        🧠
+
+    </div>
+
+
+
+    <section class="ai-setup-container">
+
+
+        <!-- LEFT INFORMATION -->
+
+
+        <div class="ai-information">
+
+
+            <div class="ai-main-icon">
+
+                🤖
+
+            </div>
+
+
+            <div class="ai-powered-label">
+
+                ✨ AI-POWERED LEARNING
+
+            </div>
+
+
+            <h1>
+
+                Create a Quiz About
+
+                <span>
+
+                    Anything!
+
+                </span>
+
+            </h1>
+
+
+            <p>
+
+                Enter any topic you want to learn,
+                and our AI will create a personalized
+                quiz especially for you.
+
+            </p>
+
+
+
+            <!-- FEATURE 1 -->
+
+
+            <article class="ai-feature">
+
+
+                <div>
+
+                    🎯
+
+                </div>
+
+
+                <section>
+
+                    <h3>
+
+                        Choose Any Topic
+
+                    </h3>
+
+
+                    <p>
+
+                        From Java programming to
+                        the Solar System—you decide.
+
+                    </p>
+
+                </section>
+
+
+            </article>
+
+
+
+            <!-- FEATURE 2 -->
+
+
+            <article class="ai-feature">
+
+
+                <div>
+
+                    📈
+
+                </div>
+
+
+                <section>
+
+                    <h3>
+
+                        Adaptive Difficulty
+
+                    </h3>
+
+
+                    <p>
+
+                        Questions automatically become
+                        more challenging as you improve.
+
+                    </p>
+
+                </section>
+
+
+            </article>
+
+
+
+            <!-- FEATURE 3 -->
+
+
+            <article class="ai-feature">
+
+
+                <div>
+
+                    ⚡
+
+                </div>
+
+
+                <section>
+
+                    <h3>
+
+                        Instant Questions
+
+                    </h3>
+
+
+                    <p>
+
+                        AI creates new questions
+                        specially for your selected topic.
+
+                    </p>
+
+                </section>
+
+
+            </article>
+
+
+        </div>
+
+
+
+        <!-- AI QUIZ FORM -->
+
+
+        <div class="ai-form-card">
+
+
+            <div class="ai-form-heading">
+
+
+                <div>
+
+                    ✨
+
+                </div>
+
+
+                <h2>
+
+                    Build Your Quiz
+
+                </h2>
+
+
+                <p>
+
+                    Tell us what you want to learn.
+
+                </p>
+
+
+            </div>
+
+
+
+            <form id="aiQuizForm">
+
+
+                <!-- TOPIC -->
+
+
+                <div class="form-group">
+
+
+                    <label for="quizTopic">
+
+                        What topic do you want
+                        to learn?
+
+                    </label>
+
+
+                    <div class="topic-input-container">
+
+
+                        <span>
+
+                            🔍
+
+                        </span>
+
+
+                        <input
+
+                            id="quizTopic"
+
+                            type="text"
+
+                            placeholder="Example: Java Programming"
+
+                            minlength="2"
+
+                            maxlength="80"
+
+                            autocomplete="off"
+
+                            required
+
+                        >
+
+
+                    </div>
+
+
+                    <small>
+
+                        Enter any educational topic.
+
+                    </small>
+
+
+                </div>
+
+
+
+                <!-- TOPIC SUGGESTIONS -->
+
+
+                <div class="topic-suggestions">
+
+
+                    <p>
+
+                        Popular topics
+
+                    </p>
+
+
+                    <div>
+
+
+                        <button
+
+                            type="button"
+
+                            class="topic-chip"
+
+                            data-topic="Java Programming"
+
+                        >
+
+                            ☕ Java
+
+                        </button>
+
+
+                        <button
+
+                            type="button"
+
+                            class="topic-chip"
+
+                            data-topic="Solar System"
+
+                        >
+
+                            🪐 Space
+
+                        </button>
+
+
+                        <button
+
+                            type="button"
+
+                            class="topic-chip"
+
+                            data-topic="Human Body"
+
+                        >
+
+                            🫀 Human Body
+
+                        </button>
+
+
+                        <button
+
+                            type="button"
+
+                            class="topic-chip"
+
+                            data-topic="Indian History"
+
+                        >
+
+                            🏛️ History
+
+                        </button>
+
+
+                        <button
+
+                            type="button"
+
+                            class="topic-chip"
+
+                            data-topic="Artificial Intelligence"
+
+                        >
+
+                            🤖 AI
+
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- DIFFICULTY -->
+
+
+                <div class="form-group">
+
+
+                    <label>
+
+                        Starting difficulty
+
+                    </label>
+
+
+                    <div class="difficulty-options">
+
+
+                        <!-- EASY -->
+
+
+                        <label class="difficulty-card">
+
+
+                            <input
+
+                                type="radio"
+
+                                name="difficulty"
+
+                                value="easy"
+
+                                checked
+
+                            >
+
+
+                            <div>
+
+
+                                <span>
+
+                                    🌱
+
+                                </span>
+
+
+                                <h3>
+
+                                    Easy
+
+                                </h3>
+
+
+                                <p>
+
+                                    Start with basics
+
+                                </p>
+
+
+                            </div>
+
+
+                        </label>
+
+
+
+                        <!-- MEDIUM -->
+
+
+                        <label class="difficulty-card">
+
+
+                            <input
+
+                                type="radio"
+
+                                name="difficulty"
+
+                                value="medium"
+
+                            >
+
+
+                            <div>
+
+
+                                <span>
+
+                                    🚀
+
+                                </span>
+
+
+                                <h3>
+
+                                    Medium
+
+                                </h3>
+
+
+                                <p>
+
+                                    A little challenge
+
+                                </p>
+
+
+                            </div>
+
+
+                        </label>
+
+
+
+                        <!-- HARD -->
+
+
+                        <label class="difficulty-card">
+
+
+                            <input
+
+                                type="radio"
+
+                                name="difficulty"
+
+                                value="hard"
+
+                            >
+
+
+                            <div>
+
+
+                                <span>
+
+                                    🔥
+
+                                </span>
+
+
+                                <h3>
+
+                                    Hard
+
+                                </h3>
+
+
+                                <p>
+
+                                    Test your skills
+
+                                </p>
+
+
+                            </div>
+
+
+                        </label>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- NUMBER OF QUESTIONS -->
+
+
+                <div class="form-group">
+
+
+                    <label for="questionAmount">
+
+                        Number of questions
+
+                    </label>
+
+
+                    <select id="questionAmount">
+
+
+                        <option value="5">
+
+                            5 Questions — Quick Quiz
+
+                        </option>
+
+
+                        <option
+
+                            value="10"
+
+                            selected
+
+                        >
+
+                            10 Questions — Recommended
+
+                        </option>
+
+
+                        <option value="15">
+
+                            15 Questions — Challenge
+
+                        </option>
+
+
+                    </select>
+
+
+                </div>
+
+
+
+                <!-- ADAPTIVE MODE -->
+
+
+                <label class="adaptive-option">
+
+
+                    <div>
+
+
+                        <span>
+
+                            🧠
+
+                        </span>
+
+
+                        <section>
+
+
+                            <h3>
+
+                                Adaptive Learning
+
+                            </h3>
+
+
+                            <p>
+
+                                Automatically change difficulty
+                                according to your answers.
+
+                            </p>
+
+
+                        </section>
+
+
+                    </div>
+
+
+                    <input
+
+                        id="adaptiveMode"
+
+                        type="checkbox"
+
+                        checked
+
+                    >
+
+
+                </label>
+
+
+
+                <!-- SUBMIT -->
+
+
+                <button
+
+                    type="submit"
+
+                    class="generate-quiz-button"
+
+                >
+
+
+                    <span>
+
+                        ✨
+
+                    </span>
+
+
+                    Generate My AI Quiz
+
+
+                    <span>
+
+                        →
+
+                    </span>
+
+
+                </button>
+
+
+            </form>
+
+
+
+            <!-- MESSAGE -->
+
+
+            <div
+
+                id="aiFormMessage"
+
+                class="form-message"
+
+            >
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<script src="js/ai-topic.js"></script>
+
+<script src="js/navbar.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Quiz | Kid Tutor</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+
+    <a
+        href="index.html"
+        class="logo"
+    >
+
+        <div class="logo-icon">
+
+            🎓
+
+        </div>
+
+
+        <div>
+
+            <h2>
+
+                Kid Tutor
+
+            </h2>
+
+            <span>
+
+                Learn • Play • Grow
+
+            </span>
+
+        </div>
+
+    </a>
+
+
+    <nav>
+
+        <a href="index.html">
+
+            Home
+
+        </a>
+
+
+        <a href="index.html#subjects">
+
+            Subjects
+
+        </a>
+
+
+        <a href="leaderboard.html">
+
+            Leaderboard
+
+        </a>
+
+
+        <a href="contact.html">
+
+            Contact Us
+
+        </a>
+
+
+        <a href="login.html">
+
+            Login
+
+        </a>
+
+    </nav>
+
+
+</header>
+
+
+<!-- QUIZ PAGE -->
+
+<main class="quiz-page">
+
+
+    <section class="quiz-container">
+
+
+        <!-- QUIZ HEADER -->
+
+        <div class="quiz-top">
+
+
+            <div>
+
+
+                <p class="quiz-label">
+
+                    Selected Subject
+
+                </p>
+
+
+                <h1 id="subjectName">
+
+                    Mathematics Quiz
+
+                </h1>
+
+
+            </div>
+
+
+            <div
+
+                class="question-counter"
+
+                id="questionCounter"
+
+            >
+
+                Question 1 of 5
+
+            </div>
+
+
+        </div>
+
+
+        <!-- PROGRESS BAR -->
+
+        <div class="progress-container">
+
+
+            <div
+
+                class="progress-bar"
+
+                id="progressBar"
+
+            >
+
+            </div>
+
+
+        </div>
+
+
+        <!-- QUESTION AREA -->
+
+        <div
+
+            id="quizContent"
+
+            class="quiz-content"
+
+        >
+
+
+            <div
+
+                class="question-icon"
+
+                id="questionIcon"
+
+            >
+
+                ➕
+
+            </div>
+
+
+            <p class="question-small">
+
+                Choose the correct answer
+
+            </p>
+
+
+            <h2
+
+                id="questionText"
+
+                class="question-text"
+
+            >
+
+                Loading question...
+
+            </h2>
+
+
+            <!-- ANSWERS -->
+
+            <div
+
+                id="answerContainer"
+
+                class="answer-container"
+
+            >
+
+            </div>
+
+
+            <!-- FEEDBACK -->
+
+            <div
+
+                id="answerMessage"
+
+                class="answer-message"
+
+            >
+
+            </div>
+
+
+            <!-- NEXT BUTTON -->
+
+            <button
+
+                id="nextButton"
+
+                class="next-button"
+
+                disabled
+
+            >
+
+                Next Question →
+
+            </button>
+
+
+        </div>
+
+
+        <!-- RESULT -->
+
+        <div
+
+            id="resultContainer"
+
+            class="result-container"
+
+        >
+
+
+            <div class="result-trophy">
+
+                🏆
+
+            </div>
+
+
+            <p class="quiz-label">
+
+                Quiz Completed
+
+            </p>
+
+
+            <h2>
+
+                Great Work!
+
+            </h2>
+
+
+            <p class="result-description">
+
+                You completed the quiz.
+
+            </p>
+
+
+            <div class="score-circle">
+
+
+                <span
+
+                    id="percentageScore"
+
+                >
+
+                    0%
+
+                </span>
+
+
+            </div>
+
+
+            <h3 id="finalScore">
+
+                You scored 0 out of 5
+
+            </h3>
+
+
+            <p
+
+                id="resultMessage"
+
+                class="result-message"
+
+            >
+
+            </p>
+
+
+            <div class="result-buttons">
+
+
+                <button
+
+                    id="restartButton"
+
+                    class="primary-button"
+
+                >
+
+                    Try Again 🔄
+
+                </button>
+
+
+                <a
+
+                    href="index.html"
+
+                    class="secondary-button"
+
+                >
+
+                    Return Home 🏠
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+<script src="js/quiz.js"></script>
+
+<script src="js/quiz.js"></script>
+
+<script src="js/navbar.js"></script>
+
+</body>
+
+
+</body>
+
+</html>
