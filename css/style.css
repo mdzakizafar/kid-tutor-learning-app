@@ -5727,3 +5727,129 @@ grid-template-columns:
 
 
 }
+
+/* =================================
+   MOBILE HAMBURGER NAVBAR
+================================= */
+
+
+/* Hide hamburger on laptop */
+
+.menu-toggle {
+
+    display: none;
+
+    border: none;
+
+    background: transparent;
+
+    color: #172345;
+
+    font-size: 32px;
+
+    cursor: pointer;
+
+}
+
+
+/* =================================
+   MOBILE VIEW
+================================= */
+
+@media screen and (max-width: 768px) {
+
+    .navbar {
+
+        position: relative;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        padding: 18px 25px;
+
+    }
+
+
+    /* Show hamburger on mobile */
+
+    .menu-toggle {
+
+        display: block;
+
+        position: relative;
+
+        z-index: 1001;
+
+    }
+
+
+    /* Hide links initially */
+
+    .navbar nav {
+
+        display: none;
+
+        position: absolute;
+
+        top: 100%;
+
+        left: 0;
+
+        width: 100%;
+
+        padding: 15px 25px 25px;
+
+        background-color: white;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 0;
+
+        box-shadow:
+            0 12px 25px
+            rgba(18, 31, 70, 0.12);
+
+        z-index: 1000;
+
+    }
+
+
+    /* Open menu after clicking */
+
+    .navbar nav.active {
+
+        display: flex;
+
+    }
+
+
+    /* Mobile navigation links */
+
+    .navbar nav a {
+
+        display: block;
+
+        width: 100%;
+
+        padding: 15px;
+
+        text-align: center;
+
+        border-bottom:
+            1px solid #eeeeee;
+
+    }
+
+
+    .navbar nav a:last-child {
+
+        border-bottom: none;
+
+    }
+
+}

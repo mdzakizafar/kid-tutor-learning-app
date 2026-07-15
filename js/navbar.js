@@ -173,3 +173,119 @@ if (
 
 
 }
+
+// =================================
+// MOBILE HAMBURGER MENU
+// =================================
+
+const menuToggle =
+    document.getElementById(
+        "menuToggle"
+    );
+
+
+const navLinks =
+    document.getElementById(
+        "navLinks"
+    );
+
+
+if (
+    menuToggle
+    &&
+    navLinks
+) {
+
+    menuToggle.addEventListener(
+
+        "click",
+
+        function () {
+
+            navLinks.classList.toggle(
+                "active"
+            );
+
+
+            const menuIsOpen =
+
+                navLinks.classList.contains(
+                    "active"
+                );
+
+
+            // Change hamburger icon
+
+            menuToggle.textContent =
+
+                menuIsOpen
+
+                ?
+
+                "✕"
+
+                :
+
+                "☰";
+
+
+            // Accessibility update
+
+            menuToggle.setAttribute(
+
+                "aria-expanded",
+
+                menuIsOpen
+
+            );
+
+        }
+
+    );
+
+
+    // Close menu after clicking a link
+
+    const navigationLinks =
+
+        navLinks.querySelectorAll(
+            "a"
+        );
+
+
+    navigationLinks.forEach(
+
+        function (link) {
+
+            link.addEventListener(
+
+                "click",
+
+                function () {
+
+                    navLinks.classList.remove(
+                        "active"
+                    );
+
+
+                    menuToggle.textContent =
+                        "☰";
+
+
+                    menuToggle.setAttribute(
+
+                        "aria-expanded",
+
+                        "false"
+
+                    );
+
+                }
+
+            );
+
+        }
+
+    );
+
+}
