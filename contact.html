@@ -325,8 +325,137 @@
             </h2>
 
 
-            <form id="contactForm">
+<form id="contactForm">
 
+    <!-- Web3Forms access key -->
+
+    <input
+        type="hidden"
+        name="access_key"
+        value="30a05464-2226-45ab-a39b-f6fcdd563ccd"
+    >
+
+
+    <!-- Email subject -->
+
+    <input
+        type="hidden"
+        name="subject"
+        value="New Kid Tutor Contact Message"
+    >
+
+
+    <!-- Website name -->
+
+    <input
+        type="hidden"
+        name="from_name"
+        value="Kid Tutor Website"
+    >
+
+
+    <!-- Name -->
+
+    <div class="form-group">
+
+        <label for="name">
+            Your Name
+        </label>
+
+        <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your name"
+            required
+        >
+
+    </div>
+
+
+    <!-- Email -->
+
+    <div class="form-group">
+
+        <label for="email">
+            Email Address
+        </label>
+
+        <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+        >
+
+    </div>
+
+
+    <!-- User's subject -->
+
+    <div class="form-group">
+
+        <label for="userSubject">
+            Subject
+        </label>
+
+        <input
+            type="text"
+            id="userSubject"
+            name="user_subject"
+            placeholder="What is your message about?"
+            required
+        >
+
+    </div>
+
+
+    <!-- Message -->
+
+    <div class="form-group">
+
+        <label for="message">
+            Message
+        </label>
+
+        <textarea
+            id="message"
+            name="message"
+            rows="6"
+            placeholder="Write your message..."
+            required
+        ></textarea>
+
+    </div>
+
+
+    <!-- Bot protection -->
+
+    <input
+        type="checkbox"
+        name="botcheck"
+        style="display: none;"
+    >
+
+
+    <!-- Submit -->
+
+    <button
+        type="submit"
+        id="contactSubmitButton"
+    >
+
+        Send Message ✉️
+
+    </button>
+
+
+    <!-- Result message -->
+
+    <p id="contactResult"></p>
+
+</form>
 
                 <!-- NAME -->
 
@@ -601,6 +730,10 @@
 <script src="js/contact.js"></script>
 
 <script src="js/navbar.js"></script>
+
+<script src="js/navbar.js"></script>
+
+<script src="js/contact.js"></script>
 
 </body>
 

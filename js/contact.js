@@ -1,450 +1,179 @@
-// GET CONTACT ELEMENTS
-
+// =================================
+// GET CONTACT FORM ELEMENTS
+// =================================
 
 const contactForm =
+    document.getElementById(
+        "contactForm"
+    );
 
-document.getElementById(
 
-"contactForm"
+const contactResult =
+    document.getElementById(
+        "contactResult"
+    );
 
-);
 
+const submitButton =
+    document.getElementById(
+        "contactSubmitButton"
+    );
 
-const nameInput =
 
-document.getElementById(
-
-"contactName"
-
-);
-
-
-const emailInput =
-
-document.getElementById(
-
-"contactEmail"
-
-);
-
-
-const subjectInput =
-
-document.getElementById(
-
-"contactSubject"
-
-);
-
-
-const messageInput =
-
-document.getElementById(
-
-"contactMessage"
-
-);
-
-
-const characterNumber =
-
-document.getElementById(
-
-"characterNumber"
-
-);
-
-
-const contactFormMessage =
-
-document.getElementById(
-
-"contactFormMessage"
-
-);
-
-
-
-// UPDATE CHARACTER NUMBER
-
-
-messageInput.addEventListener(
-
-"input",
-
-function () {
-
-
-characterNumber.textContent =
-
-messageInput.value.length;
-
-
-}
-
-);
-
-
-
-// GET SAVED USER
-
-
-const savedUser =
-
-JSON.parse(
-
-localStorage.getItem(
-
-"kidTutorUser"
-
-)
-
-);
-
-
-// AUTOMATICALLY ADD USER DETAILS
-
-
-if (
-
-savedUser
-
-) {
-
-
-nameInput.value =
-
-savedUser.name;
-
-
-emailInput.value =
-
-savedUser.email;
-
-
-}
-
-
-
-// SUBMIT CONTACT FORM
-
+// =================================
+// SEND CONTACT MESSAGE
+// =================================
 
 contactForm.addEventListener(
 
-"submit",
+    "submit",
 
-function (
+    async function (event) {
 
-event
+        // Stop normal page refresh
 
-) {
-
-
-event.preventDefault();
+        event.preventDefault();
 
 
-// GET VALUES
+        // Show loading state
+
+        submitButton.disabled =
+            true;
 
 
-const name =
-
-nameInput
-
-.value
-
-.trim();
+        submitButton.textContent =
+            "Sending...";
 
 
-const email =
-
-emailInput
-
-.value
-
-.trim();
+        contactResult.textContent =
+            "Sending your message...";
 
 
-const subject =
-
-subjectInput
-
-.value;
+        contactResult.style.color =
+            "#6545f5";
 
 
-const message =
+        // Get all form information
 
-messageInput
+        const formData =
 
-.value
+            new FormData(
 
-.trim();
+                contactForm
 
-
-
-// CHECK NAME
+            );
 
 
-if (
+        try {
 
-name.length < 3
+            // Send data to Web3Forms
 
-) {
+            const response =
+
+                await fetch(
+
+                    "https://api.web3forms.com/submit",
+
+                    {
+
+                        method:
+                            "POST",
+
+                        body:
+                            formData
+
+                    }
+
+                );
 
 
-showContactMessage(
+            const data =
 
-"Please enter a valid name.",
+                await response.json();
 
-"error"
+
+            // Message successfully sent
+
+            if (
+
+                data.success
+
+            ) {
+
+                contactResult.textContent =
+
+                    "Message sent successfully! We will contact you soon. 🎉";
+
+
+                contactResult.style.color =
+
+                    "#16a34a";
+
+
+                // Clear form
+
+                contactForm.reset();
+
+            }
+
+
+            // Web3Forms returned an error
+
+            else {
+
+                throw new Error(
+
+                    data.message
+
+                    ||
+
+                    "Unable to send your message."
+
+                );
+
+            }
+
+        }
+
+
+        catch (error) {
+
+            console.error(
+
+                "Contact form error:",
+
+                error
+
+            );
+
+
+            contactResult.textContent =
+
+                "Message could not be sent. Please try again.";
+
+
+            contactResult.style.color =
+
+                "#dc2626";
+
+        }
+
+
+        finally {
+
+            // Enable button again
+
+            submitButton.disabled =
+
+                false;
+
+
+            submitButton.textContent =
+
+                "Send Message ✉️";
+
+        }
+
+    }
 
 );
-
-
-return;
-
-
-}
-
-
-
-// CHECK MESSAGE
-
-
-if (
-
-message.length < 10
-
-) {
-
-
-showContactMessage(
-
-"Please write a message containing at least 10 characters.",
-
-"error"
-
-);
-
-
-return;
-
-
-}
-
-
-
-// CREATE CONTACT MESSAGE
-
-
-const newContactMessage = {
-
-
-name:
-
-name,
-
-
-email:
-
-email,
-
-
-subject:
-
-subject,
-
-
-message:
-
-message,
-
-
-date:
-
-new Date()
-
-.toLocaleString()
-
-
-};
-
-
-
-// GET PREVIOUS MESSAGES
-
-
-const savedMessages =
-
-JSON.parse(
-
-localStorage.getItem(
-
-"kidTutorMessages"
-
-)
-
-)
-
-||
-
-[];
-
-
-
-// ADD NEW MESSAGE
-
-
-savedMessages.push(
-
-newContactMessage
-
-);
-
-
-
-// SAVE MESSAGES
-
-
-localStorage.setItem(
-
-"kidTutorMessages",
-
-JSON.stringify(
-
-savedMessages
-
-)
-
-);
-
-
-// SHOW SUCCESS
-
-
-showContactMessage(
-
-"Your message was sent successfully! Thank you for contacting Kid Tutor. 🎉",
-
-"success"
-
-);
-
-
-// CLEAR FORM
-
-
-contactForm.reset();
-
-
-characterNumber.textContent =
-
-"0";
-
-
-// RESTORE USER DETAILS
-
-
-if (
-
-savedUser
-
-) {
-
-
-nameInput.value =
-
-savedUser.name;
-
-
-emailInput.value =
-
-savedUser.email;
-
-
-}
-
-
-}
-
-);
-
-
-
-// SHOW FORM MESSAGE
-
-
-function showContactMessage(
-
-message,
-
-type
-
-) {
-
-
-contactFormMessage.textContent =
-
-message;
-
-
-contactFormMessage.className =
-
-"form-message";
-
-
-if (
-
-type === "success"
-
-) {
-
-
-contactFormMessage.classList.add(
-
-"success-message"
-
-);
-
-
-}
-
-
-else {
-
-
-contactFormMessage.classList.add(
-
-"error-message"
-
-);
-
-
-}
-
-
-// REMOVE MESSAGE AFTER 5 SECONDS
-
-
-setTimeout(
-
-function () {
-
-
-contactFormMessage.className =
-
-"form-message";
-
-
-contactFormMessage.textContent =
-
-"";
-
-
-},
-
-5000
-
-);
-
-
-}
