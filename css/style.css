@@ -5853,3 +5853,15 @@ grid-template-columns:
     }
 
 }
+
+.developer {
+    margin-top: 12px;
+    font-size: 15px;
+    color: #9ca3af;
+    text-align: center;
+}
+
+.developer strong {
+    color: #ffffff;
+    font-weight: 700;
+}
