@@ -607,18 +607,6 @@ footer p {
 }
 
 
-.footer-links {
-
-    display:
-    flex;
-
-    justify-content:
-    center;
-
-    gap:
-    30px;
-
-}
 
 
 .footer-links a {
